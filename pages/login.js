@@ -6,6 +6,9 @@ const Login = () => {
   const [data, setData] = useState({ username: null, password: null });
 
   const handleSubmit = () => {
+    if (data?.password === null && data?.username === null) {
+      return setData({ username: "", password: "" });
+    }
     if (data?.password === null) {
       setData({ ...data, password: "" });
     }
@@ -30,7 +33,7 @@ const Login = () => {
           </h2>{" "}
           <p className="mt-2 text-center text-base leading-[1.25rem] ">
             <span className="text-gray-600">Ou </span>
-            <Link href="/signup?redirect=%2Fsignup%C2%A0-">
+            <Link legacyBehavior href="/signup?redirect=%2Fsignup%C2%A0-">
               <a className="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">
                 fazer cadastro
               </a>
@@ -124,7 +127,7 @@ const Login = () => {
             </div>{" "}
             <div className="mt-2 flex items-center justify-end">
               <div className="text-sm leading-[1.25rem]">
-                <Link href="/reset-password">
+                <Link legacyBehavior href="/reset-password">
                   <a className="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">
                     Esqueceu a senha?
                   </a>
