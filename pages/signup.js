@@ -6,6 +6,9 @@ const Login = () => {
   const [data, setData] = useState({ username: null, password: null });
 
   const handleSubmit = () => {
+    if (data?.password === null && data?.username === null) {
+      return setData({ username: "", password: "" });
+    }
     if (data?.password === null) {
       setData({ ...data, password: "" });
     }
