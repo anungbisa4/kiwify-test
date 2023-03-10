@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 const Login = () => {
@@ -29,12 +30,11 @@ const Login = () => {
           </h2>{" "}
           <p className="mt-2 text-center text-base leading-[1.25rem] ">
             <span className="text-gray-600">Ou </span>
-            <a
-              href="/signup?redirect=%2Fsignup%C2%A0-"
-              className="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150"
-            >
-              fazer cadastro
-            </a>
+            <Link href="/signup?redirect=%2Fsignup%C2%A0-">
+              <a className="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">
+                fazer cadastro
+              </a>
+            </Link>
           </p>
         </div>{" "}
         <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
@@ -124,12 +124,11 @@ const Login = () => {
             </div>{" "}
             <div className="mt-2 flex items-center justify-end">
               <div className="text-sm leading-[1.25rem]">
-                <a
-                  href="/reset-password"
-                  className="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150"
-                >
-                  Esqueceu a senha?
-                </a>
+                <Link href="/reset-password">
+                  <a className="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">
+                    Esqueceu a senha?
+                  </a>
+                </Link>
               </div>
             </div>{" "}
             {/**/}{" "}
